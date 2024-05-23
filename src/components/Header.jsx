@@ -4,14 +4,13 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
 import SearchIcon from '@mui/icons-material/Search';
-import VSCIcon from '../VSC_icon2.png';
+import ContactsIcon from '@mui/icons-material/Contacts';;
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -55,6 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+// button appears in bottom right corner to scroll back to top
 const ScrollTop = (props) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -92,7 +92,6 @@ const ScrollTop = (props) => {
 const Header = ({ onSearchTermChange }) => {
   const handleSearch = (event) => {
     onSearchTermChange(event.target.value);
-    // console.log(event.target.value);
   }
 
 
@@ -110,8 +109,8 @@ const Header = ({ onSearchTermChange }) => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <img src={VSCIcon} alt="" style={{ height: "48px", width: "48px", marginRight: "10px" }}/>
-            {"VSContacts"}
+            <ContactsIcon alt="Logo" style={{ height: "48px", width: "48px", marginRight: "10px" }}/>
+            {"Contacts"}
           </IconButton>
           {/* <Typography
             variant="h6"

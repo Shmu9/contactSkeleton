@@ -3,31 +3,36 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import MoreIcon from '@mui/icons-material/More';
+import {
+  Email,
+  More,
+  Phone,
+  Home,
+  Language
+} from '@mui/icons-material';
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: '300px',
+  height: '180px',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
 
-export default function TransitionsModal() {
+const ContactModal = ({ contact }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <MoreIcon onClick={handleOpen}/>
+    <div style={{ width: "100%", height: "100%" }}>
+      <More sx={{ width: "36px", height: "36px" }} onClick={handleOpen}/>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -44,10 +49,27 @@ export default function TransitionsModal() {
         <Fade in={open}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
+              {contact.name}
             </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            <Typography id="transition-modal-description">
+              <ul>
+                <div className='ContactCard-modal-detail'>
+                  <Email/>
+                  {contact.email}
+                </div>
+                <div className='ContactCard-modal-detail'>
+                  <Phone/>
+                  {contact.phone}
+                </div>
+                <div className='ContactCard-modal-detail'>
+                  <Home/>
+                  {contact.address.city}
+                </div>
+                <div className='ContactCard-modal-detail'>
+                  <Language/>
+                  {contact.website}
+                </div>
+              </ul>
             </Typography>
           </Box>
         </Fade>
@@ -55,3 +77,5 @@ export default function TransitionsModal() {
     </div>
   );
 }
+
+export default ContactModal;

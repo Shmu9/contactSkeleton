@@ -8,8 +8,6 @@
 }
 
 .ContactList-container {
-  /* border: 1px solid red; */
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -24,17 +22,13 @@
   flex-flow: row wrap;
   justify-content: center;
   align-content: flex-start;
-  /* flex-grow: calc(50%); */
-  /* margin: auto; */
 }
 
-@media screen and (max-width: 821px) {
+/* @media screen and (max-width: 821px) {
   .ContactList-letter-group-contacts {
     justify-content: center;
   }
-}
-
-
+} */
 
 .ContactCard-container {
   background-color: #222222;
@@ -42,7 +36,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  /* border: 1px dotted blue; */
   width: 380px;
   height: 80px;
   border-radius: 10px;
@@ -52,25 +45,34 @@
 .ContactCard-container:hover {
   background-color: azure;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .ContactCard-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* border: 1px dashed green; */
+  font-size: large;
   color: #68CDED;
   padding: 5px 0;
 }
 
 .ContactCard-modal {
-  /* display: flex; */
   color: #68CDED;
   margin-left: auto;
-  padding: 10px;
-  /* border: 1px solid red; */
-  /* justify-self: flex-end; */
+  padding: 7px;
+  margin-right: 5px;
+}
+
+.ContactCard-modal:hover {
+  cursor: pointer;
+}
+
+.ContactCard-modal-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .hover-underline:hover {
@@ -92,6 +94,4 @@
 
 .let {
   color: #3A5086;
-  /* display: flex;
-  flex-direction: row; */
 }

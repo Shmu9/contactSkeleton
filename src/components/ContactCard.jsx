@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Avatar,
-  Modal,
-  Fade,
-  Box,
-  Typography,
-  Backdrop
+  // Modal,
+  // Fade,
+  // Box,
+  // Typography,
+  // Backdrop
 } from '@mui/material';
 import ContactModal from './ContactModal'
 
@@ -13,9 +13,6 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const ContactCard = ({ contact }) => {
   const [pfp, setPfp] = useState("");
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   // const fetchPfp = async () => {
   //   const img = await apiGet(`/photos?id=${contact.id}`)
@@ -39,6 +36,7 @@ const ContactCard = ({ contact }) => {
     return initials
   }
 
+  // open new mailto tab of contact
   const sendMail = (event) => {
     event.preventDefault();
     const newWindow = window.open(`mailto:${contact.email}`, '_blank', 'noopener,noreferrer')
@@ -46,7 +44,7 @@ const ContactCard = ({ contact }) => {
   }
 
 	return (
-		<div className='ContactCard-container' onClick={handleOpen}>
+		<div className='ContactCard-container'>
       <Avatar src={pfp} alt={initials(contact.name)} sx={{ width: 42, height: 42, margin: "0 10px 0 10px" }}>
         {pfp ? "" : initials(contact.name)}
       </Avatar>
@@ -59,43 +57,8 @@ const ContactCard = ({ contact }) => {
           </div>
         </div>
       </div>
-        {/* <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          slots={{ backdrop: Backdrop }}
-          slotProps={{
-            backdrop: {
-              timeout: 500,
-            },
-          }}
-        >
-          <Fade in={open}>
-            <Box sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '60%',
-              height: '60%',
-              bgcolor: 'background.paper',
-              border: '2px solid #000',
-              boxShadow: 24,
-              p: 4,
-            }}>
-              <Typography id="transition-modal-title" variant="h6" component="h2">
-                Text in a modal
-              </Typography>
-              <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
-            </Box>
-          </Fade>
-        </Modal> */}
       <div className='ContactCard-modal'>
-        <ContactModal/>
+        <ContactModal contact={contact}/>
       </div>
     </div>
 	)
