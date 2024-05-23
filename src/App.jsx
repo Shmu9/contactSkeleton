@@ -21,7 +21,7 @@ function App() {
 
 	useEffect(() => {
 		fetchAllContacts();
-	});
+	}, []);
 
 
 
@@ -31,7 +31,10 @@ function App() {
       {loading ? (
         <LinearProgress/>
       ) : (
-        <ContactList contacts={contacts} searchTerm={searchTerm}/>
+        <ContactList
+          contacts={contacts}
+          searchTerm={searchTerm}
+        />
       )}
     </div>
   );

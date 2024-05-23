@@ -98,7 +98,7 @@ const Header = ({ onSearchTermChange }) => {
 
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "5px" }}>
-      <AppBar position="static">
+      <AppBar sx={{ height: "88px", justifyContent: "center" }}position="static">
         <Toolbar 
           id="back-to-top-anchor"
           sx={{ justifyContent: "space-between"}}

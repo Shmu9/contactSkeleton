@@ -5,10 +5,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000D18;
+  /* background-color: #000D18; */
+  background-image: url('background_orange_waves3.svg');
+  /* background-image: url('background_blob.svg'); */
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.responsive-pad {
+  margin: 0 20%;
+}
+
+@media screen and (max-width: 1960px) {
+  .responsive-pad {
+    margin: 0 15%;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .responsive-pad {
+    margin: 0 10%;
+  }
+}
+@media screen and (max-width: 1536px) {
+  .responsive-pad {
+    margin: 0 7%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .responsive-pad {
+    margin: 0 3%;
+  }
 }
