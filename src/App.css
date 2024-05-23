@@ -1,38 +1,72 @@
 .App {
   text-align: center;
+  /* background-color: #000D18; */
+  /* font-family: 'Consolas', 'Cascadia Mono'; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ContactList-container {
   display: flex;
   flex-direction: column;
+  /* border: 1px solid red; */
   align-items: center;
+  /* justify-content: center; */
+  min-height: 100%;
+  height: 90vh;
+}
+
+.ContactCard-container {
+  background-color: #222222;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px dotted blue; */
+  /* max-width: 800px; */
+  /* flex-grow: 0.8; */
+  min-width: 80%;
+  min-height: 16%;
+  max-height: 30%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.ContactCard-container:hover {
+  background-color: azure;
+}
+
+.ContactCard-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* border: 1px dashed green; */
+  color: #68CDED;
+  padding: 5px 0;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.mail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+li {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.let {
+  color: #3A5086;
+  /* display: flex;
+  flex-direction: row; */
 }
